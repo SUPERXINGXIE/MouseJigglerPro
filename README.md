@@ -1,3 +1,99 @@
+---
+
+# MouseJigglerPro 背景描述 / Background Description of MouseJigglerPro
+
+## 背景挑战 / Background Challenges
+
+在现代企业办公环境中，员工常面临以下技术限制与场景痛点：  
+In modern enterprise office environments, employees often face the following technical limitations and scenario pain points:
+
+### 1. IT 管控限制 / IT Management Restrictions
+- 公司统一强制开启屏幕保护/定时息屏策略（如 15 分钟无操作自动黑屏）。  
+  The company enforces a unified screen saver/timed lock screen policy (e.g., automatic screen blackout after 15 minutes of inactivity).  
+- 电源管理设置被锁定，禁止用户手动调整休眠时长。  
+  Power management settings are locked, preventing users from manually adjusting sleep durations.  
+- 安全策略监控异常进程，传统脚本类工具易被拦截。  
+  Security policies monitor abnormal processes, making traditional script-based tools prone to interception.
+
+### 2. 自动化测试场景 / Automated Testing Scenarios
+- 长时间无人值守的 UI 测试（如 Web/APP 回归测试）。  
+  Long-term unattended UI testing (e.g., regression testing for web or app interfaces).  
+- Android 设备通过 USB 连接进行 ADB 调试时，因电脑息屏中断测试流程。  
+  During ADB debugging of Android devices via USB, the test process is interrupted due to the computer screen locking.  
+- 自动化脚本执行期间需持续模拟人工交互信号。  
+  Continuous simulation of human interaction signals is required during the execution of automated scripts.
+
+### 3. 办公协作风险 / Office Collaboration Risks
+- 协同工具（钉钉/企业微信）检测到电脑不活跃时强制下线。  
+  Collaboration tools (e.g., DingTalk/WeChat Work) force users offline when the computer is detected as inactive.  
+- 视频会议软件（Zoom/Teams）因息屏导致画面黑屏。  
+  Video conferencing software (e.g., Zoom/Teams) blacks out the screen due to inactivity.  
+- 需保持“在线”状态应对考勤/任务监控行为。  
+  Maintaining an “online” status is necessary to comply with attendance/task monitoring requirements.
+
+---
+
+## 解决方案特性 / Solution Features
+
+MouseJigglerPro 通过以下技术组合精准应对上述场景：  
+MouseJigglerPro addresses the above scenarios with the following technical combinations:
+
+### 1. 双重防护机制 / Dual Protection Mechanism
+- **OS 层级干预 / OS-Level Intervention**：调用 Windows API `SetThreadExecutionState`，直接向系统发送“保持唤醒”指令，绕过电源管理策略。  
+  Calls the Windows API `SetThreadExecutionState` to directly send a “stay awake” instruction to the system, bypassing power management policies.  
+- **行为模拟层 / Behavior Simulation Layer**：通过 `pyautogui` 实现：  
+  Implemented via `pyautogui`:  
+  - **轻度模式 / Gentle Mode**：每 5 秒 10px 随机方向移动（模拟正常操作频率）。  
+    Moves the mouse 10px in a random direction every 5 seconds (simulating normal operation frequency).  
+  - **疯狂模式 / Frenzy Mode**：每秒 20px 高频抖动（应对极端休眠策略）。  
+    High-frequency jitter of 20px per second (to handle extreme sleep policies).
+
+### 2. 智能化适配策略 / Intelligent Adaptation Strategy
+- **动态频率调节 / Dynamic Frequency Adjustment**：根据目标应用敏感度自动切换工作模式。  
+  Automatically switches operating modes based on the sensitivity of the target application.  
+- **进程隐匿技术 / Process Concealment Technology**：采用守护线程 + 事件监听机制，退出时自动清理进程残留。  
+  Uses daemon threads and event listeners, automatically cleaning up residual processes upon exit.  
+- **硬件兼容优化 / Hardware Compatibility Optimization**：完美支持 USB 外接显示器/虚拟机环境。  
+  Perfectly supports USB external monitors and virtual machine environments.
+
+### 3. 场景化功能矩阵 / Scenario-Based Feature Matrix
+以下是 MouseJigglerPro 在不同场景中的功能支持：  
+The following outlines MouseJigglerPro’s feature support across different scenarios:
+
+```mermaid
+graph TD
+A[自动化测试 / Automated Testing] --> B[持续触发 ADB 响应 / Continuously Trigger ADB Responses]
+A --> C[防止测试中断 / Prevent Test Interruptions]
+D[办公协作 / Office Collaboration] --> E[维持 IM 在线状态 / Maintain IM Online Status]
+D --> F[保障视频会议连贯 / Ensure Seamless Video Conferencing]
+G[IT 管控环境 / IT-Controlled Environment] --> H[规避策略检测 / Evade Policy Detection]
+G --> I[无需修改系统设置 / No Need to Modify System Settings]
+```
+
+---
+
+## 技术优势对比 / Technical Advantage Comparison
+
+以下是对比 MouseJigglerPro 与传统解决方案的技术优势：  
+The following compares the technical advantages of MouseJigglerPro against traditional solutions:
+
+| 维度 / Dimension            | MouseJigglerPro                              | 传统解决方案 / Traditional Solutions               |
+|----------------------------|----------------------------------------------|-----------------------------------------------|
+| 系统兼容性 / System Compatibility | Win10+/macOS                                | 仅支持特定 Windows 版本 / Limited to specific Windows versions |
+| 隐蔽性 / Concealment         | 系统托盘静默运行 / Silent system tray operation | 需保持脚本窗口前置 / Requires keeping script window in foreground |
+| 抗检测能力 / Anti-Detection Capability | 模拟自然操作轨迹 / Simulates natural operation patterns | 固定频率易被识别为脚本 / Fixed frequency easily identified as script |
+| 多任务支持 / Multitasking Support | 支持同时运行测试/办公 / Supports simultaneous testing and office tasks | 单一用途脚本 / Single-purpose scripts |
+| 资源占用 / Resource Usage   | <1% CPU & 内存 / <1% CPU & memory            | 高频脚本导致性能损耗 / High-frequency scripts cause performance degradation |
+
+---
+
+## 总结 / Summary
+
+该方案通过精准模拟人类行为特征，在满足企业合规要求的前提下，有效解决了现代化办公场景中的屏幕息屏痛点，实现了安全性与效率的双重提升。MouseJigglerPro 不仅提供用户友好的双语界面，还通过线程安全设计、干净退出机制和系统托盘集成，确保了产品的专业性、可靠性和隐蔽性，成为应对企业 IT 管控、自动化测试及办公协作场景的理想工具。  
+
+This solution effectively addresses the screen lock pain points in modern office scenarios while meeting enterprise compliance requirements, achieving a dual enhancement in security and efficiency. MouseJigglerPro not only offers a user-friendly bilingual interface but also ensures professionalism, reliability, and concealment through thread-safe design, clean exit mechanisms, and system tray integration, making it an ideal tool for handling enterprise IT restrictions, automated testing, and office collaboration scenarios.
+
+--- 
 
 
 # MouseJigglerPro  - Anti-Screensaver Tool 
