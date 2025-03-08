@@ -9,6 +9,7 @@
 
 **[English interface display]**
 
+Tool address ： [MouseJigglerPro V1.0.0 Release](https://github.com/SUPERXINGXIE/MouseJigglerPro/releases/tag/MouseJigglerPro_V1.0.0)
 
 ![image](https://github.com/user-attachments/assets/50de690f-8ac8-4889-802f-6dce91dd6eea)
 
@@ -16,6 +17,7 @@
 
 **[中文界面展示]** 
 
+工具地址 ： [MouseJigglerPro V1.0.0 Release](https://github.com/SUPERXINGXIE/MouseJigglerPro/releases/tag/MouseJigglerPro_V1.0.0)
 
 ![image](https://github.com/user-attachments/assets/a19fd1dc-0bb1-4b70-832d-40a5b0b47a0e)
 
