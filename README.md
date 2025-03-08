@@ -1,4 +1,4 @@
----
+
 
 # MouseJigglerPro 背景描述 / Background Description of MouseJigglerPro
 
@@ -31,7 +31,7 @@ In modern enterprise office environments, employees often face the following tec
 - 需保持“在线”状态应对考勤/任务监控行为。  
   Maintaining an “online” status is necessary to comply with attendance/task monitoring requirements.
 
----
+
 
 ## 解决方案特性 / Solution Features
 
@@ -70,7 +70,7 @@ G[IT 管控环境 / IT-Controlled Environment] --> H[规避策略检测 / Evade 
 G --> I[无需修改系统设置 / No Need to Modify System Settings]
 ```
 
----
+
 
 ## 技术优势对比 / Technical Advantage Comparison
 
@@ -85,7 +85,7 @@ The following compares the technical advantages of MouseJigglerPro against tradi
 | 多任务支持 / Multitasking Support | 支持同时运行测试/办公 / Supports simultaneous testing and office tasks | 单一用途脚本 / Single-purpose scripts |
 | 资源占用 / Resource Usage   | <1% CPU & 内存 / <1% CPU & memory            | 高频脚本导致性能损耗 / High-frequency scripts cause performance degradation |
 
----
+
 
 ## 总结 / Summary
 
@@ -93,7 +93,7 @@ The following compares the technical advantages of MouseJigglerPro against tradi
 
 This solution effectively addresses the screen lock pain points in modern office scenarios while meeting enterprise compliance requirements, achieving a dual enhancement in security and efficiency. MouseJigglerPro not only offers a user-friendly bilingual interface but also ensures professionalism, reliability, and concealment through thread-safe design, clean exit mechanisms, and system tray integration, making it an ideal tool for handling enterprise IT restrictions, automated testing, and office collaboration scenarios.
 
---- 
+
 
 
 # MouseJigglerPro  - Anti-Screensaver Tool 
