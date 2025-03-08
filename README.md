@@ -62,13 +62,13 @@ The following outlines MouseJigglerPro’s feature support across different scen
 
 
 graph TD
-A[自动化测试 / Automated Testing] --> B[持续触发 ADB 响应 / Continuously Trigger ADB Responses]
-A --> C[防止测试中断 / Prevent Test Interruptions]
-D[办公协作 / Office Collaboration] --> E[维持 IM 在线状态 / Maintain IM Online Status]
-D --> F[保障视频会议连贯 / Ensure Seamless Video Conferencing]
-G[IT 管控环境 / IT-Controlled Environment] --> H[规避策略检测 / Evade Policy Detection]
-G --> I[无需修改系统设置 / No Need to Modify System Settings]
-
+    A[自动化测试 / Automated Testing] --> B[持续触发 ADB 响应 / Continuously Trigger ADB Responses]
+    A --> C[防止测试中断 / Prevent Test Interruptions]
+    D[办公协作 / Office Collaboration] --> E[维持 IM 在线状态 / Maintain IM Online Status]
+    D --> F[保障视频会议连贯 / Ensure Seamless Video Conferencing]
+    G[IT 管控环境 / IT-Controlled Environment] --> H[规避策略检测 / Evade Policy Detection]
+    G --> I[无需修改系统设置 / No Need to Modify System Settings]
+​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 
 
 
