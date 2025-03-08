@@ -60,10 +60,7 @@ MouseJigglerPro addresses the above scenarios with the following technical combi
 以下是 MouseJigglerPro 在不同场景中的功能支持：  
 The following outlines MouseJigglerPro’s feature support across different scenarios:
 
-
 ![mermaid-diagram-2025-03-09-015122](https://github.com/user-attachments/assets/651f5d85-1244-47d5-85ef-276bcfaaa369)
-
-
 
 ## 技术优势对比 / Technical Advantage Comparison
 
